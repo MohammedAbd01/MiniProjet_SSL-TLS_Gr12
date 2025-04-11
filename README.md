@@ -33,15 +33,3 @@ Analyse des certificats DV, OV, EV, Wildcard & Multi-Domain (SAN).
 - POODLE  
 - BEAST, DROWN, Heartbleed, CRIME/BREACH  
 
-### 7. Bonnes Pratiques & Outils
-- Désactivation des versions obsolètes (SSL 3.0, TLS 1.0/1.1)  
-- Utilisation d’outils : SSL Labs, OpenSSL, Wireshark  
-
-## ⚙️ Exemple de Configuration (Apache)
-
-```bash
-sudo apt update && sudo apt install apache2
-sudo ufw allow 'Apache Full'
-sudo a2enmod ssl
-# Génération de certificat auto-signé
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
